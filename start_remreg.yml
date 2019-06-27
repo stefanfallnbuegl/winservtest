@@ -1,4 +1,7 @@
+---
 - name: Start RemoteRegistry Service
-  win_service:
-    name: remoteregistry
-    state: started
+   hosts: 172.31.46.232
+   tasks:
+    win_service:
+     name: remoteregistry
+     state: started
