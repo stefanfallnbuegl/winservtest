@@ -1,0 +1,5 @@
+# Start the RemoteRegistry Service
+- name: Start RemoteRegistry Service
+  win_service:
+    name: remoteregistry
+    state: started
