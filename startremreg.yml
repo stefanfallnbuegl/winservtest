@@ -1,3 +1,4 @@
+---
 - name: Start RemoteRegistry Service
   win_service:
     name: remoteregistry
