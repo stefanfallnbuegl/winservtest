@@ -1,3 +1,4 @@
+---
 - name: Start RemoteRegistry Service
   hosts: 172.31.46.232
   tasks:
