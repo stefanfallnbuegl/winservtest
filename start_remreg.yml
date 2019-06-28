@@ -1,6 +1,8 @@
 ---
 - name: Restart a service
-  hosts: "172.31.46.232"
-  win_service:
-    name: spooler
-    state: restarted
+  hosts: 172.31.46.232
+  tasks:
+    - name: Start Spooler
+      win_service:
+       name: spooler
+       state: restarted
