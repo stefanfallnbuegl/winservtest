@@ -2,7 +2,13 @@
 - name: Restart a service
   hosts: 172.31.46.232
   tasks:
+  
     - name: Stop Spooler
       win_service:
        name: spooler
+       state: stopped
+    
+    - name: Stop RemoteRegistry
+      win_service:
+       name: remoteregistry
        state: stopped
