@@ -1,8 +1,6 @@
---- 
-- 
+---
+- name: Restart a service
   hosts: "172.31.46.232"
-  name: "start remoteregistry service"
-  tasks: 
-    name: remoteregistry
-    state: started
-    win_service: ~
+  win_service:
+    name: spooler
+    state: restarted
