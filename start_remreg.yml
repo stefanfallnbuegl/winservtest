@@ -20,3 +20,5 @@
        src: C:\Temp\foo.txt
        dest: C:\ansible\foo.txt
        remote_src: yes
+    
+    - win_shell: C:\somescript.ps1 >> C:\somelog.txt
