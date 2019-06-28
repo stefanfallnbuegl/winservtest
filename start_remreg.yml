@@ -1,14 +1,22 @@
 ---
-- name: Restart a service
+- name: stop spooler and remoteregistry service
   hosts: 172.31.46.232
   tasks:
   
+    #stopping spooler service
     - name: Stop Spooler
       win_service:
        name: spooler
        state: stopped
     
+    #stopping remoteregistry service
     - name: Stop RemoteRegistry
       win_service:
        name: remoteregistry
        state: stopped
+
+    - name: Copy a single file where the source is on the remote host
+      win_copy:
+       src: C:\Temp\foo.txt
+       dest: C:\ansible\foo.txt
+       remote_src: yes
