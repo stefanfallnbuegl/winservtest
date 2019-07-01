@@ -21,4 +21,8 @@
        dest: C:\ansible\foo.txt
        remote_src: yes
     
-    - win_shell: C:\somescript.ps1 >> C:\somelog.txt
+    - name: run ps-script, located on the client
+      win_shell: C:\somescript.ps1 >> C:\somelog.txt
+
+    - name: run powershell command
+      win_command: powershell.exe -ExecutionPolicy ByPass -File C:/somescript.ps1 >> C:\RemComLog.log
