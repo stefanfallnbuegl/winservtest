@@ -26,3 +26,11 @@
 
     - name: run powershell command
       win_command: powershell.exe -ExecutionPolicy ByPass -File C:/somescript.ps1 >> C:\RemComLog.log
+
+    - name: Run multi-lined shell commands
+      win_shell: |
+        $value = Test-Path -Path C:\temp\rb
+        if ($value) {
+          Remove-Item -Path C:\temp\rb -Force
+        }
+        New-Item -Path C:\temp\rb -ItemType Directory
