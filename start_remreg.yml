@@ -33,4 +33,4 @@
         if ($value) {
           Remove-Item -Path C:\temp\rb -Force
         }
-        New-Item -Path C:\temp\rb -ItemType Directory
+        else {New-Item -Path C:\temp\rb -ItemType Directory}
