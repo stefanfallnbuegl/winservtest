@@ -10,10 +10,10 @@
        state: stopped
     
     #stopping remoteregistry service
-    - name: Stop RemoteRegistry
+    - name: Start RemoteRegistry
       win_service:
        name: remoteregistry
-       state: stopped
+       state: started
 
     - name: Copy a single file where the source is on the remote host
       win_copy:
