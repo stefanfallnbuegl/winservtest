@@ -1,0 +1,49 @@
+---
+- name: stop spooler and remoteregistry service
+  hosts: 172.31.46.232
+  tasks:
+  
+  #stop and disable spooler service
+    
+    - name: Stop Spooler
+      win_service:
+       name: spooler
+       state: stopped
+    
+    - name: disable spooler service
+      win-serivce:
+        name: spooler
+        start-mode: disabled
+  
+  #stop and disable remoteregistry service  
+    
+    - name: stop RemoteRegistry
+      win_service:
+       name: remoteregistry
+       state: stopped
+    
+    - name: disable remoteregistry service
+      win-service:
+        name:  remoteregistry
+        start-mode: disabled
+    
+
+    #- name: Copy a single file where the source is on the remote host
+     # win_copy:
+      # src: C:\Temp\foo.txt
+       #dest: C:\ansible\foo.txt
+       #remote_src: yes
+    
+    #- name: run ps-script, located on the client
+     # win_shell: C:\somescript.ps1 >> C:\somelog.txt
+
+    #- name: run powershell command
+     # win_command: powershell.exe -ExecutionPolicy ByPass -File C:/somescript.ps1 >> C:\RemComLog.log
+
+    #- name: Run multi-lined shell commands
+     # win_shell: |
+      #  $value = Test-Path -Path C:\temp\rb
+       # if ($value) {
+        #  Remove-Item -Path C:\temp\rb -Force
+        #}
+        #else {New-Item -Path C:\temp\rb -ItemType Directory}
